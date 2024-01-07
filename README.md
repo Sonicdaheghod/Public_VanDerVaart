@@ -496,3 +496,49 @@ see 12/30
 </p>
 
 
+## __1/4__
+
+* resolved issue with processing inputs to make reference sequence file (.nc) for RMSD analysis both major and minor
+
+  <p align="center">
+  <img width="960" alt="image" src="https://github.com/Sonicdaheghod/VanDerVaartLab.MT/assets/68253811/43658cd9-b242-40d3-b928-8bc48869a010">
+</p>
+
+* when running cpptraj script for reference nc files. remember to label output nc files with major/minor!
+* successfully ran rmsd_analysis_test_updated_COPY.sh to run RMSD analysis on DNA sequences
+    * edited code to output .txt files into respective directories (major/minor)
+ 
+* **work on looper_prod_continue.sh to submit sequences to be continued**
+
+Issues resolved CONTINUE RUNS:
+
+* gpujob.sh did not run sequences to continue production run
+    * Solution: in continueXTUY.txt, must add "-major" or "-minor" after 4 letter sequence
+  <p align="center">
+  <img width="300" alt="image" src="https://github.com/Sonicdaheghod/VanDerVaartLab.MT/assets/68253811/7144d532-750b-414c-ae8b-15dc76d860c70">
+</p>
+
+**Steps to view rmsd .txt files:**
+
+1) Import "module load apps/grace/5.1.22"
+2) xmgrace (filename) 
+
+**In each subdirectory:**
+
+| Files  | Purpose |
+| ------------- | ------------- |
+| block(#)_major(or minor)_rmsd.txt | original file of rmsd from cpptraj run |
+| block(#)_major(or minor)_rmsd_output.txt | edited file of rmsd from cpptraj run (identify relaxation times) |
+| block(#)_major(or minor)_rmsd_output_COPY.txt | copy of edited file of rmsd from cpptraj run (identify relaxation times) |
+
+* delete a range of lines on vim:
+    * :5,10d
+    * 5 is th ebeginning point, 10 is the end point
+    * finished ATCC
+
+## __1/7__
+
+* Analysis didnt run on the three sequences that need to be continued
+* Reason: didnt uncomment analysis line in my looper_prod_continue.sh
+
+* now on CTCA
