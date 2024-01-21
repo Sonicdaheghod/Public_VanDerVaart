@@ -542,3 +542,80 @@ Issues resolved CONTINUE RUNS:
 * Reason: didnt uncomment analysis line in my looper_prod_continue.sh
 
 * now on CTCA
+
+## __1/8__
+
+* contraints messed up on UT sequences
+* start working on ATCG
+* after find relax time, fix excel table
+
+## __1/9__
+
+* all except major block 1 have obvious indication of relaxation times
+  <p align="center">
+  <img width="900" alt="image" src="https://github.com/Sonicdaheghod/VanDerVaartLab.MT/assets/68253811/8b190d98-ea4c-4ac0-b645-1087de5570fc">
+</p>
+
+Image: Red box = relaxation time begins for block 2 minor rmsd ATCG
+
+* start on CTCT for tomorrow
+
+## __1/10__
+* finished CTCT
+* start working on CTCG
+* TTCT continue run in progress
+
+## __1/11__
+
+* prepared presentation for lab meeting
+
+## __1/12__
+
+<img width="38" alt="image" src="https://github.com/Sonicdaheghod/VanDerVaartLab.MT/assets/68253811/d878707a-5d74-4547-a96d-3abf3ef9b569">
+
+## __1/13__
+
+![image](https://github.com/Sonicdaheghod/VanDerVaartLab.MT/assets/68253811/edc7af27-eedb-4f5b-a4af-af034c4a6029)
+
+## __1/14__
+
+* copied UT_flip.tar.gz and new looper_heat.sh into uridine_flip/XTUY
+* ran looper_heat.sh for new UT sequences on new partition (simmons_i) - around 2-3 days to finish
+* follow steps 12/25 - 12/27 in log
+
+## __1/15__
+
+Submitted production runs for UT
+
+  <p align="center">
+  <img width="900" alt="image" src="https://github.com/Sonicdaheghod/VanDerVaartLab.MT/assets/68253811/c4ab8518-01b3-4154-9a75-fcdb8c0f1c64">
+</p>
+
+
+| Problems  | Solutions |
+| ------------- | ------------- |
+| looper-prod.sh was not running all UT sequences | exit 0 in code was only running first sequence it saw; deleted so all sequences could be run |
+| looper-prod.sh - analy.sh wasn't being read | use complete pathway (didnt work,tried to run analy.sh outside of script |
+| | angle.sh seems to be the issue |
+
+**Next Steps**
+* find easier way to import necessary files to run looper_prod
+DONE
+
+## __1/16__
+
+Successfully Submitted production runs for UT
+
+| Problems  | Solutions |
+| ------------- | ------------- |
+| looper_prod.sh was not running sequences | reset irun to 1 on gpujob.sh |
+|  | cp necessary files from analyscript |
+
+## __1/17 - 1/19__
+
+* finished production run for UT sequences- now analyze on VMD
+* downloaded CHARMM and X3DNA on remote server
+
+| Problems  | Solutions |
+| ------------- | ------------- |
+| not all sequences ran through as job submissions | use looper_prod_continue.sh and fill out respective .txt file |
